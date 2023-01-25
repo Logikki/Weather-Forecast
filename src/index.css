@@ -5,6 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: auto;
+}
+
+@font-face {
+  font-family: 'Alternates';
+  src: url('./styles/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+* {
+font-family: 'Alternates';
 }
 
 code {
@@ -38,6 +48,9 @@ code {
 
 .temperature_header {
   display: block;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
 }
 .coordinates {
   font-size: medium;
@@ -51,4 +64,16 @@ code {
 }
 .location_info_div {
   padding-top: 2em;
+}
+
+.weather_description {
+  margin: 0.7em;
+}
+
+.chooce-city-button {
+  padding: 0.7em;
+}
+
+.slider-text {
+  padding: 0.7em;
 }

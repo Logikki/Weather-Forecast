@@ -46,15 +46,15 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
 
       <div className='slider_div'>
         <label>
-          <span>Show weather of next 3 days</span>
           <Switch onChange={()=>setThreeDayView(!threeDaysView)} checked={threeDaysView} className="switch_slider" />
+          <p className='slider-text'>Show 3 / 1 days</p>
         </label>
       </div>
       <div> 
         
         <Button 
           type="button" 
-          className="btn btn-secondary" 
+          className="chooce-city-button" 
           as='a' 
           variant='light' 
           onClick={handleResetChoice}
