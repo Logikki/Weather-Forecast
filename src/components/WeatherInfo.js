@@ -1,13 +1,23 @@
-/* eslint-disable no-unused-vars */
 import {React, useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudSun,faWater, faCloudRain, faCloudSunRain, faSun, faCloudBolt,faSnowflake, faCloud  } from '@fortawesome/free-solid-svg-icons'
 import fontawesome from '@fortawesome/fontawesome'
 fontawesome.library.add(faCloudSun,faWater, faCloudRain, faCloudSunRain, faSun, faCloudBolt,faSnowflake, faCloud)
 
+/**
+ * 
+ * @param {weathercode} Int 
+ * @param {temperature} Double 
+ * @param {date} Date 
+ * @returns Weather info box 
+ */
 const WeatherInfo = ({weatherCode, temperature, date }) => {
-  const [faIcon, setFaIcon] = useState('cloud')
 
+  const [faIcon, setFaIcon] = useState('cloud')
+  /**
+   * UseEffect chooces most suitable icon for given weather code according to  
+   * WMO Weather interpretation codes (WW).
+   */
   useEffect(() => {
     if(weatherCode === 0) {
       setFaIcon('sun')
@@ -42,9 +52,6 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
       <h2 className='temperature_header'> °C {temperature}</h2>
     </div>
   )
-    
-
-  
 }
 
 export default WeatherInfo

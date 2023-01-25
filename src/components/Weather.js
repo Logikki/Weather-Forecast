@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import {React, useEffect, useState } from 'react'
+import {React, useState } from 'react'
 import Switch from 'react-switch'
 import WeatherInfo from './WeatherInfo.js'
 import {Button} from 'react-bootstrap'
@@ -10,24 +9,26 @@ import 'bootstrap/dist/css/bootstrap.min.css'
  * @param {city} string 
  * @param {coordinates} Object 
  * @param {weatherData} Object 
+ * @param {handleResetChoice} Function
  * @returns weather info.
- * If "Show weather of next 3 days" is selected, shows weather of the next 3 days.
+ * If "Show weather of next 3 days" is selected, shows weather info of the next 3 days.
+ * Otherwise shows weather info for current date
+ * 
+ * Button handles going back to city selection view
  */
 const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
   const [threeDaysView, setThreeDayView] = useState(false)
-  
- 
-  console.log(weatherData)
+
   return (
     <div>
       <div className='location_info_div'>
-        <h2 className='city_header'>{city}</h2>
-        <label className='coordinates'>{coordinates.latitude}°N {coordinates.longitude}°E</label>
+        <h2 className='city_header'>{city} </h2>
+        <label className='coordinates'>{coordinates.latitude}°N {coordinates.longitude}°E </label>
       </div>
 
       {threeDaysView ?
         //Maps through weatherData object keys, to get data from all 3 dates.
-        Object.keys(weatherData).map((weatherOtd, i) => 
+        Object.keys(weatherData).map((weatherOtd) => 
           <WeatherInfo
             key={weatherData[weatherOtd].date}
             weatherCode={weatherData[weatherOtd].weathercode}
@@ -40,8 +41,7 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
         <WeatherInfo 
           weatherCode={weatherData.currentDay.weathercode}
           temperature={weatherData.currentDay.temperature}
-          date={weatherData.currentDay.date}/>
-            
+          date={weatherData.currentDay.date} />
       }
 
       <div className='slider_div'>
@@ -50,12 +50,13 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
           <Switch onChange={()=>setThreeDayView(!threeDaysView)} checked={threeDaysView} className="switch_slider" />
         </label>
       </div>
-      <div>
-        <Button
+      <div> 
+        
+        <Button 
           type="button" 
           className="btn btn-secondary" 
           as='a' 
-          variant='light'
+          variant='light' 
           onClick={handleResetChoice}
         >Choose city
         </Button>

@@ -1,15 +1,15 @@
 import { useState, useEffect, React } from 'react'
 import Select from 'react-select'
 
-const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
+const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   const [allCities, setAllCities] = useState([])
   const avoinDataURL = 'https://www.avoindata.fi/data/fi/api/3/action/datastore_search?resource_id=cb261c69-9883-486b-9e41-e0560471df86&'
   
 
   /**
-   * Funktio hakee avoindata.fi sivulta tiedot suomen kunnista ja kaupungeista,
-   * jonka jälkeen suodatetaan listaa siten, että jäljelle jää kaupungit 
-   * ja niistä vain nimet
+   * Function fetches list of finnish cities and municipalities from "avoindata.fi".
+   * Then reduces the data to consist of cities only.
+   * Sets the list of cities to {allCities}
    */
   useEffect(() => {
     fetch(avoinDataURL)
@@ -31,11 +31,11 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   }, [])
   
   /**
-   * Funtio suoritetaan, kun käyttäjä valitsee kaupungin valikosta.
-   * Lisätään kaupunki valituksi arvoon selectedCity.
-   * Haetaan kaupungin kordinaatit geoCoding API:sta,
-   * pyöristetään kahden desimaalin tarkkuuteen 
-   * ja asetetaan ne uusiksi kordinaateiksi.
+   * Function is run when user selects a city from the selector
+   * City is set to value {selectedCity}.
+   * Searches city coordinates from geoCoding API and round to float .2 
+   * Then Weather data is searched from current date to day after tomorrow.
+   * Weather data is set to {newWeatherData} for further usage. 
    * @param {string} selected 
    */
   const onSelect = (selected) => {
@@ -50,7 +50,7 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
           longitude: longitude,
           latitude: latitude
         })
-
+        //Dates to make API request to get weather data from this day to day after tomorrow
         let currentDate = new Date()
         let dayAfterTomorrow = new Date()
         dayAfterTomorrow.setDate(currentDate.getDate() + 2)
@@ -70,7 +70,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
                 temperature: data.current_weather.temperature,
                 weathercode: data.current_weather.weathercode
               },
-
               nextDay: {
                 date : data.daily.time[1],
                 temperature: data.daily.temperature_2m_max[1],
@@ -81,7 +80,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
                 temperature: data.daily.temperature_2m_max[2],
                 weathercode: data.daily.weathercode[2]
               }
-
             }
             setWeatherData(newWeatherData)
           }
@@ -104,4 +102,4 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   )
 }
 
-export default Cities
+export default CitySelection

@@ -1,10 +1,6 @@
-/* eslint-disable no-unused-vars */
 import {React, useState} from 'react'
-import Cities from './components/Cities.js'
+import CitySelection from './components/CitySelection.js'
 import Weather from './components/Weather.js'
-
-
-
 
 const App = () => {
 
@@ -13,24 +9,28 @@ const App = () => {
   const [weatherData, setWeatherData] = useState(null)
 
   /**
-   * Renderöidään kaupungin valinta, jos kordinaatteja ei ole.
-   * Jos kordinaatit, eli kaupunki on asetettu, näytetään Weather komponentti.
+   * Fcuntion resets all values.
    */
   const handleResetChoice = () => {
     setWeatherData(null)
     setCoordinates(null)
     setSelectedCity(null)
   }
+  /**
+   * Renders citySelection view when city is not selected.
+   * City is not selected if weatherData is null.
+   */
 
   return (
     <div className="app_wrapper">
       <h1>The weather service</h1>
       {weatherData===null ?
         <div>
-          <Cities 
+          <CitySelection 
             setSelectedCity={setSelectedCity}  
             setCoordinates={setCoordinates}
             setWeatherData={setWeatherData}
+            coordinates={coordinates}
           />
           
         </div>
