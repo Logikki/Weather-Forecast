@@ -15,7 +15,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
     fetch(avoinDataURL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.result.records)
         const reduced = data.result.records.reduce((filtered, option)=> {
           if (option.KUNTAMUOTO === 'Kaupunki') {
             const city = {value: option.KUNTANIMIFI, label: option.KUNTANIMIFI}
@@ -42,7 +41,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   const onSelect = (selected) => {
     const geoCodingURL = `https://geocoding-api.open-meteo.com/v1/search?name=${selected}`
     setSelectedCity(selected)
-    console.log(selected)
     fetch(geoCodingURL)
       .then((res) => res.json())
       .then((data) => {      
@@ -58,7 +56,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
         dayAfterTomorrow.setDate(currentDate.getDate() + 2)
         dayAfterTomorrow = dayAfterTomorrow.toLocaleDateString('en-CA')
         currentDate = currentDate.toLocaleDateString('en-CA')
-        console.log(dayAfterTomorrow)
 
         const weatherURL = 
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode&daily=weathercode,temperature_2m_max&current_weather=true&timezone=Europe%2FMoscow&start_date=${currentDate}&end_date=${dayAfterTomorrow}`
@@ -66,7 +63,6 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
         fetch(weatherURL)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data)
             const newWeatherData = 
             {
               currentDay: {

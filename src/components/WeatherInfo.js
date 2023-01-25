@@ -9,7 +9,6 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
   const [faIcon, setFaIcon] = useState('cloud')
 
   useEffect(() => {
-    console.log(weatherCode + '  ' + date)
     if(weatherCode === 0) {
       setFaIcon('sun')
     }
@@ -35,8 +34,7 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
       setFaIcon('cloud-bolt')
     }
   },[])
-  
-  console.log(date)
+
   return (
     <div className='weather_info'>
       <h6>{date}</h6>
