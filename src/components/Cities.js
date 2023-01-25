@@ -45,9 +45,7 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
     console.log(selected)
     fetch(geoCodingURL)
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        
+      .then((data) => {      
         const longitude = data.results[0].longitude.toFixed(2)
         const latitude = data.results[0].latitude.toFixed(2)
         setCoordinates({
@@ -85,7 +83,7 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
               datDay: {
                 date : data.daily.time[2],
                 temperature: data.daily.temperature_2m_max[2],
-                weatherCode: data.daily.weathercode[2]
+                weathercode: data.daily.weathercode[2]
               }
 
             }
@@ -99,9 +97,13 @@ const Cities = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   }
 
   return (
-    <div>
-      <Select options={allCities} 
-        onChange={(valinta) => onSelect(valinta.value)} />
+    <div className='select_city_div'>
+      <Select 
+        placeholder='Select city'
+        options={allCities} 
+        onChange={(valinta) => onSelect(valinta.value)} 
+        className='city_select'
+      />
     </div>
   )
 }

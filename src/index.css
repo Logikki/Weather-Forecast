@@ -13,7 +13,42 @@ code {
 }
 
 .app_wrapper {
-
   align-content: center;
   text-align: center;
+}
+
+.city_select {
+  align-items: center;
+  width: 100%;
+}
+.select_city_div {
+  align-content: center;
+  width: 30%;
+  display: inline-block;
+}
+
+.weather_info {
+  display: inline-block;
+  padding: 1.5em;
+}
+
+.weather_wrapper {
+  display: inline-block;
+}
+
+.temperature_header {
+  display: block;
+}
+.coordinates {
+  font-size: medium;
+  font-weight: 400;
+  padding: 1em;
+}
+
+.city_header {
+  display: inline-block;
+  font-weight: 400;
+}
+.location_info_div {
+  
 }

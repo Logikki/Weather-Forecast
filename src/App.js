@@ -35,12 +35,14 @@ const App = () => {
           
         </div>
         :
-        <Weather 
-          city={selectedCity} 
-          coordinates={coordinates}
-          weatherData={weatherData}
-          handleResetChoice={handleResetChoice}
-        />
+        <div className='weather_wrapper'> 
+          <Weather 
+            city={selectedCity} 
+            coordinates={coordinates}
+            weatherData={weatherData}
+            handleResetChoice={handleResetChoice}
+          />
+        </div>
 
       }
     </div>

@@ -21,8 +21,8 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
   return (
     <div>
       <div className='location_info_div'>
-        <h2>{city}</h2>
-        <label>{coordinates.latitude} {coordinates.longitude}</label>
+        <h2 className='city_header'>{city}</h2>
+        <label className='coordinates'>{coordinates.latitude}°N {coordinates.longitude}°E</label>
       </div>
 
       {threeDaysView ?
@@ -32,7 +32,7 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
             key={weatherData[weatherOtd].date}
             weatherCode={weatherData[weatherOtd].weathercode}
             temperature={weatherData[weatherOtd].temperature}
-            date={weatherData[weatherOtd].time}
+            date={weatherData[weatherOtd].date}
           />
         )
         :
@@ -40,21 +40,22 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
         <WeatherInfo 
           weatherCode={weatherData.currentDay.weathercode}
           temperature={weatherData.currentDay.temperature}
-          date={weatherData.currentDay.time}/>
+          date={weatherData.currentDay.date}/>
             
       }
 
-      <div>
+      <div className='slider_div'>
         <label>
           <span>Show weather of next 3 days</span>
-          <Switch onChange={()=>setThreeDayView(!threeDaysView)} checked={threeDaysView} />
+          <Switch onChange={()=>setThreeDayView(!threeDaysView)} checked={threeDaysView} className="switch_slider" />
         </label>
       </div>
       <div>
         <Button
           type="button" 
           className="btn btn-secondary" 
-          as='a' variant='light'
+          as='a' 
+          variant='light'
           onClick={handleResetChoice}
         >Choose city
         </Button>
