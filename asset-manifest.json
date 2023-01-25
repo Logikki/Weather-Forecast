@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/Weather-Forecast/static/css/main.c4fe753b.css",
-    "main.js": "/Weather-Forecast/static/js/main.7c6f5fb6.js",
+    "main.css": "/Weather-Forecast/static/css/main.627c2b49.css",
+    "main.js": "/Weather-Forecast/static/js/main.a13cda9a.js",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/Weather-Forecast/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
     "index.html": "/Weather-Forecast/index.html",
-    "main.c4fe753b.css.map": "/Weather-Forecast/static/css/main.c4fe753b.css.map",
-    "main.7c6f5fb6.js.map": "/Weather-Forecast/static/js/main.7c6f5fb6.js.map"
+    "main.627c2b49.css.map": "/Weather-Forecast/static/css/main.627c2b49.css.map",
+    "main.a13cda9a.js.map": "/Weather-Forecast/static/js/main.a13cda9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4fe753b.css",
-    "static/js/main.7c6f5fb6.js"
+    "static/css/main.627c2b49.css",
+    "static/js/main.a13cda9a.js"
   ]
 }
