@@ -55,7 +55,8 @@ code {
 .coordinates {
   font-size: medium;
   font-weight: 400;
-  padding: 1em;
+  padding-bottom: 1em;
+  display: block;
 }
 
 .city_header {

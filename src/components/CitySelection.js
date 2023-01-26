@@ -70,17 +70,17 @@ const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
             const newWeatherData = 
             {
               currentDay: {
-                date : data.daily.time[0],
+                date : data.daily.time[0].slice(5).replace('-','.'), //formatting date string from ex. "2023-01-01" to "01.01"
                 temperature: data.current_weather.temperature,
                 weathercode: data.current_weather.weathercode
               },
               nextDay: {
-                date : data.daily.time[1],
+                date : data.daily.time[1].slice(5).replace('-','.'),
                 temperature: data.daily.temperature_2m_max[1],
                 weathercode: data.daily.weathercode[1]
               },
               datDay: {
-                date : data.daily.time[2],
+                date : data.daily.time[2].slice(5).replace('-','.'),
                 temperature: data.daily.temperature_2m_max[2],
                 weathercode: data.daily.weathercode[2]
               }
@@ -96,6 +96,7 @@ const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
 
   return (
     <div className='select_city_div'>
+      <h1> Weather Forecast </h1>
       <Select 
         placeholder='Select city'
         options={allCities} 

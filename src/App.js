@@ -23,7 +23,6 @@ const App = () => {
 
   return (
     <div className="app_wrapper">
-      <h1> Weather Forecast </h1>
       {weatherData===null ?
         <div>
           <CitySelection 

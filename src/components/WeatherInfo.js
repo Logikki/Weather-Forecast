@@ -21,7 +21,6 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
    * WMO Weather interpretation codes (WW).
    */
   useEffect(() => {
-    console.log(weatherCode)
     if(weatherCode === 0) {
       setFaIcon('sun')
       setweatherDescription('Clear sky')
@@ -60,8 +59,8 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
     <div className='weather_info'>
       <h6>{date}</h6>
       <FontAwesomeIcon icon={faIcon} size='7x'/>
-      <h6 className='weather_description'>{weatherDescription}</h6>
-      <h2 className='temperature_header'> °C {temperature}</h2>
+      <h3 className='weather_description'>{weatherDescription}</h3>
+      <h2 className='temperature_header'> {temperature}°C </h2>
     </div>
   )
 }
