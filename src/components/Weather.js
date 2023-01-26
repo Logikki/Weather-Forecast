@@ -55,7 +55,8 @@ const Weather = ({city,  coordinates, weatherData, handleResetChoice}) => {
         <Button 
           type="button" 
           className="chooce-city-button" 
-          as='a' 
+          as='a'
+          color='#678983'
           variant='light' 
           onClick={handleResetChoice}
         >Choose city

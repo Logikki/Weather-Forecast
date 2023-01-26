@@ -1,4 +1,4 @@
-body {
+html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: auto;
+  margin: 0;
+  height: 100%;
+  background-color: #181D31 !important;
 }
 
 @font-face {
@@ -21,7 +24,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+h1 {
+  color: #F0E9D2;
+}
 .app_wrapper {
   align-content: center;
   text-align: center;
@@ -30,6 +35,7 @@ code {
 .city_select {
   align-items: center;
   width: 100%;
+  
 }
 .select_city_div {
   align-content: center;
@@ -40,6 +46,7 @@ code {
 .weather_info {
   display: inline-block;
   padding: 1.5em;
+  color: #F0E9D2;
 }
 
 .weather_wrapper {
@@ -50,6 +57,7 @@ code {
   display: block;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  color: #F0E9D2;
 
 }
 .coordinates {
@@ -57,24 +65,33 @@ code {
   font-weight: 400;
   padding-bottom: 1em;
   display: block;
+  color: #F0E9D2;
 }
 
 .city_header {
   display: inline-block;
   font-weight: 400;
+  color: #F0E9D2;
 }
 .location_info_div {
   padding-top: 2em;
+  color: #F0E9D2;
 }
 
 .weather_description {
   margin: 0.7em;
+  color: #F0E9D2;
 }
 
 .chooce-city-button {
   padding: 0.7em;
+  color: #678983 !important;
 }
 
 .slider-text {
   padding: 0.7em;
+  color: #F0E9D2;
+}
+.icon {
+  color: #F0E9D2;
 }
