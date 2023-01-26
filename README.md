@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+This application shows weather for finnish cities.
+Data about cities is fetched from: https://www.avoindata.fi
+Coordinates are fetched from: https://geocoding-api.open-meteo.com/v1/search?
+Weather data is fetched from: https://api.open-meteo.com/v1/forecast

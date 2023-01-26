@@ -21,6 +21,7 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
    * WMO Weather interpretation codes (WW).
    */
   useEffect(() => {
+    console.log(weatherCode)
     if(weatherCode === 0) {
       setFaIcon('sun')
       setweatherDescription('Clear sky')
@@ -46,7 +47,7 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
       setweatherDescription('Rain')
     }
     else if ([71, 73, 75, 77, 80, 81, 82, 85, 86].includes(weatherCode)) {
-      setFaIcon('Snow')
+      setFaIcon('snowflake')
     
     }
     else if ([95,96,99].includes(weatherCode)) {

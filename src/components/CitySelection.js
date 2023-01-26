@@ -15,7 +15,6 @@ const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
     fetch(avoinDataURL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         const reduced = data.result.records.reduce((filtered, option)=> {
           if (option.KUNTAMUOTO === 'Kaupunki') {
             const city = {value: option.KUNTANIMIFI, label: option.KUNTANIMIFI}
@@ -64,7 +63,6 @@ const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
         fetch(weatherURL)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data)
             const newWeatherData = 
             {
               currentDay: {
