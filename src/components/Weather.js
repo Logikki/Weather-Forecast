@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
  * @param {coordinates} Object 
  * @param {weatherData} Object 
  * @param {handleResetChoice} Function
- * @returns weather info.
+ * @returns weather info view.
  * If "Show weather of next 3 days" is selected, shows weather info of the next 3 days.
  * Otherwise shows weather info for current date
  * 

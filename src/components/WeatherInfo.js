@@ -10,7 +10,7 @@ fontawesome.library.add(faCloudSun,faWater, faCloudRain, faCloudSunRain, faSun, 
  * @param {weathercode} Int 
  * @param {temperature} Double 
  * @param {date} Date 
- * @returns Weather info box 
+ * @returns Weather information: temperature, description of the weather, weather icon and date for the weather view
  */
 const WeatherInfo = ({weatherCode, temperature, date }) => {
 

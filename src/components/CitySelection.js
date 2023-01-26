@@ -1,13 +1,17 @@
 import { useState, useEffect, React } from 'react'
 import Select from 'react-select'
 
+/**
+ *  
+ * @returns City selection view
+ */
 const CitySelection = ({ setSelectedCity, setCoordinates, setWeatherData }) => {
   const [allCities, setAllCities] = useState([])
   const avoinDataURL = 'https://www.avoindata.fi/data/fi/api/3/action/datastore_search?resource_id=cb261c69-9883-486b-9e41-e0560471df86&'
   
 
   /**
-   * Function fetches list of finnish cities and municipalities from "avoindata.fi".
+   * useEffect Function fetches list of finnish cities and municipalities from "avoindata.fi".
    * Then reduces the data to consist of cities only.
    * Sets the list of cities to {allCities}
    */
