@@ -8,7 +8,7 @@ html, body {
   width: auto;
   margin: 0;
   height: 100%;
-  background-color: #181D31 !important;
+  background-color: #E6DDC4 !important;
 }
 
 @font-face {
@@ -25,7 +25,7 @@ code {
     monospace;
 }
 h1 {
-  color: #F0E9D2;
+  color: #181D31;
 }
 .app_wrapper {
   align-content: center;
@@ -35,6 +35,7 @@ h1 {
 .city_select {
   align-items: center;
   width: 100%;
+  color: #181D31;
   
 }
 .select_city_div {
@@ -46,7 +47,7 @@ h1 {
 .weather_info {
   display: inline-block;
   padding: 1.5em;
-  color: #F0E9D2;
+  color: #181D31;
 }
 
 .weather_wrapper {
@@ -57,7 +58,7 @@ h1 {
   display: block;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  color: #F0E9D2;
+  color: #181D31;
 
 }
 .coordinates {
@@ -65,33 +66,33 @@ h1 {
   font-weight: 400;
   padding-bottom: 1em;
   display: block;
-  color: #F0E9D2;
+  color: #181D31;
 }
 
 .city_header {
   display: inline-block;
   font-weight: 400;
-  color: #F0E9D2;
+  color: #181D31;
 }
 .location_info_div {
   padding-top: 2em;
-  color: #F0E9D2;
+  color: #181D31;
 }
 
 .weather_description {
   margin: 0.7em;
-  color: #F0E9D2;
+  color: #181D31;
 }
 
 .chooce-city-button {
   padding: 0.7em;
-  color: #678983 !important;
+  color: #181D31 !important;
 }
 
 .slider-text {
   padding: 0.7em;
-  color: #F0E9D2;
+  color: #181D31;
 }
 .icon {
-  color: #F0E9D2;
+  color: #181D31 !important;
 }

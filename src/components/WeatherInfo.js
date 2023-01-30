@@ -47,7 +47,7 @@ const WeatherInfo = ({weatherCode, temperature, date }) => {
     }
     else if ([71, 73, 75, 77, 80, 81, 82, 85, 86].includes(weatherCode)) {
       setFaIcon('snowflake')
-    
+      setweatherDescription('Snow')
     }
     else if ([95,96,99].includes(weatherCode)) {
       setFaIcon('cloud-bolt')
